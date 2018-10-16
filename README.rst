@@ -16,8 +16,8 @@ Configuration
 
 In you app.php file register the proviser
 
-code block
-   $params = array(
+
+  $params = array(
      "doctrine.db_options" => array(
          'dbname' => 'dbname',
          'user' => 'dbuser',
@@ -27,13 +27,12 @@ code block
      ),
      "dev_mode" => true,
      "path" => path_to_your_entities_repository
-   );
+  );
 
    $app['doctrine'] = $app->register(new SilexDoctrineProvider(), 
 
 In config/cli-config.php add
 
-code block
 
    $app = require __DIR__.'/../src/app.php';
 
