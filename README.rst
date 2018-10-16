@@ -16,27 +16,30 @@ Configuration
 
 In you app.php file register the proviser
 
-| $params = array(
-|   "doctrine.db_options" => array(
-|       'dbname' => 'dbname',
-|       'user' => 'dbuser',
-|       'password' => 'dbpass',
-|       'host' => '127.0.0.1',
-|       'driver' => 'pdo_mysql'
-|   ),
-|   "dev_mode" => true,
-|   "path" => path_to_your_entities_repository
-| );
-|
-| $app['doctrine'] = $app->register(new SilexDoctrineProvider(), 
+code block
+   $params = array(
+     "doctrine.db_options" => array(
+         'dbname' => 'dbname',
+         'user' => 'dbuser',
+         'password' => 'dbpass',
+         'host' => '127.0.0.1',
+         'driver' => 'pdo_mysql'
+     ),
+     "dev_mode" => true,
+     "path" => path_to_your_entities_repository
+   );
+
+   $app['doctrine'] = $app->register(new SilexDoctrineProvider(), 
 
 In config/cli-config.php add
 
-| $app = require __DIR__.'/../src/app.php';
-|
-| $helperSet = new \Symfony\Component\Console\Helper\HelperSet(array(
-|   'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($app['doctrine'])
-| ));
-| return $helperSet;
+code block
+
+   $app = require __DIR__.'/../src/app.php';
+
+   $helperSet = new \Symfony\Component\Console\Helper\HelperSet(array(
+     'em' => new \Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper($app['doctrine'])
+   ));
+   return $helperSet;
 
 Enjoy!
