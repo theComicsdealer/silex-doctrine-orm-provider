@@ -1,0 +1,22 @@
+{
+    "name": "thecomicsdealer/silex-doctrine-orm-provider",
+    "description": "A custum doctrine orm service provider for the silex framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "florent",
+            "email": "florent@agencemoods.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": ">=5.5.9",
+        "silex/silex": "~2.0",
+        "doctrine/orm": "^2.6",
+        "symfony/yaml": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    }
+}
